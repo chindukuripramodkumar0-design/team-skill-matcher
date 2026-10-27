@@ -1,0 +1,282 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --page-bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf1f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.badge-high {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.badge-med {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.badge-low {
+  background: #ffe4e6;
+  color: #9f1239;
+  border: 1px solid #fecdd3;
+  border-radius: 999px;
+  padding: 4px 9px;
+}
+
+.row-expand {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px;
+  color: #172033 !important;
+  padding: 9px 12px;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f8fafc;
+  color: #475569;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #edf1f7;
+  text-align: left;
+}
+
+th {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+button,
+[role="button"] {
+  font-family: inherit;
+}
+
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 9px 10px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+}
+
+
+
+/* Fix text readability in tables */
+td {
+  color: #334155 !important;
+}
+
+th {
+  color: #475569 !important;
+}
+
+
+/* Theme synchronization for pages that use fixed Tailwind/inline colors. */
+.app-theme-root[data-theme="dark"] .glass,
+.app-theme-root[data-theme="dark"] .bg-white,
+.app-theme-root[data-theme="dark"] .bg-gray-50,
+.app-theme-root[data-theme="dark"] .bg-slate-50,
+.app-theme-root[data-theme="dark"] .bg-gray-100,
+.app-theme-root[data-theme="dark"] .bg-slate-100 {
+  background-color: #172033 !important;
+  color: #e5e7eb !important;
+  border-color: #334155 !important;
+}
+
+.app-theme-root[data-theme="dark"] table,
+.app-theme-root[data-theme="dark"] thead,
+.app-theme-root[data-theme="dark"] tbody,
+.app-theme-root[data-theme="dark"] tr,
+.app-theme-root[data-theme="dark"] td,
+.app-theme-root[data-theme="dark"] th {
+  background-color: transparent !important;
+  color: #dbe4f0 !important;
+  border-color: #334155 !important;
+}
+
+.app-theme-root[data-theme="dark"] .table-header,
+.app-theme-root[data-theme="dark"] thead tr {
+  background-color: #111827 !important;
+  color: #cbd5e1 !important;
+}
+
+.app-theme-root[data-theme="dark"] tbody tr:hover {
+  background-color: #1e293b !important;
+}
+
+.app-theme-root[data-theme="dark"] input,
+.app-theme-root[data-theme="dark"] select,
+.app-theme-root[data-theme="dark"] textarea {
+  background-color: #0f172a !important;
+  color: #e5e7eb !important;
+  border-color: #475569 !important;
+}
+
+.app-theme-root[data-theme="dark"] input::placeholder,
+.app-theme-root[data-theme="dark"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.app-theme-root[data-theme="light"] .glass {
+  background-color: #ffffff;
+  color: #172033;
+  border-color: #e2e8f0;
+}
+
+.app-theme-root[data-theme="light"] table,
+.app-theme-root[data-theme="light"] td {
+  color: #334155;
+}
+
+
+/* Final theme/readability safeguards */
+.app-theme-root[data-theme="light"] { color: #172033; }
+.app-theme-root[data-theme="light"] .glass { background: #fff; color: #172033; border-color: #e2e8f0; }
+.app-theme-root[data-theme="light"] table td { color: #334155 !important; }
+.app-theme-root[data-theme="light"] table th { color: #475569 !important; }
+.app-theme-root[data-theme="light"] input,
+.app-theme-root[data-theme="light"] select,
+.app-theme-root[data-theme="light"] textarea { background: #fff !important; color: #172033 !important; border-color: #cbd5e1 !important; }
+.app-theme-root[data-theme="light"] .text-white { color: #172033; }
+.app-theme-root[data-theme="dark"] .text-gray-900,
+.app-theme-root[data-theme="dark"] .text-gray-800,
+.app-theme-root[data-theme="dark"] .text-gray-700,
+.app-theme-root[data-theme="dark"] .text-slate-900,
+.app-theme-root[data-theme="dark"] .text-slate-800 { color: #e5e7eb !important; }
+.app-theme-root[data-theme="dark"] .text-gray-600,
+.app-theme-root[data-theme="dark"] .text-gray-500,
+.app-theme-root[data-theme="dark"] .text-gray-400,
+.app-theme-root[data-theme="dark"] .text-slate-600,
+.app-theme-root[data-theme="dark"] .text-slate-500,
+.app-theme-root[data-theme="dark"] .text-slate-400 { color: #aab8cc !important; }
+.app-theme-root[data-theme="dark"] .bg-white\/5,
+.app-theme-root[data-theme="dark"] .bg-black\/40,
+.app-theme-root[data-theme="dark"] .bg-gray-50,
+.app-theme-root[data-theme="dark"] .bg-gray-100 { background-color: #111827 !important; }
+.app-theme-root button { transition: filter .15s ease, transform .15s ease; }
+.app-theme-root button:hover:not(:disabled) { filter: brightness(.96); }

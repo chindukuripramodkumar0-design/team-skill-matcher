@@ -1,0 +1,12 @@
+﻿node_modules/
+.DS_Store
+*.log
+# Local Netlify folder
+.netlify/
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+# Private keys
+*.pem
+*.key

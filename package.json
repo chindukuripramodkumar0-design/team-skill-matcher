@@ -1,0 +1,22 @@
+{
+  "name": "team-skill-matcher",
+  "version": "1.0.0",
+  "description": "AI-Assisted Team Skill Matching Platform \u2014 HTML, CSS, JS + Node static server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Static site: no compilation step required')\"",
+    "check": "node --check server.js && node --check netlify/functions/bitbucket.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "team",
+    "skills",
+    "matching",
+    "localStorage"
+  ],
+  "license": "MIT"
+}
